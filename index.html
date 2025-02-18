@@ -37,10 +37,6 @@
       transition: opacity 0.3s ease-in-out;
     }
     
-    .hidden {
-      opacity: 0;
-    }
-    
     /* You can also customize the active button styles */
     .category-btn {
       transition: background-color 0.3s ease, color 0.3s ease;
@@ -51,132 +47,6 @@
       color: #fff; /* Active button text color */
     }
   </style>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll(".nav-link");
-    
-      function activateNavLink() {
-        let scrollY = window.scrollY + 100; // Adjust for navbar height
-        let activeSection = null;
-    
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          const sectionId = section.getAttribute("id");
-    
-          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-            activeSection = sectionId;
-          }
-        });
-    
-        if (activeSection) {
-          // Remove the 'active' class from all links
-          navLinks.forEach((link) => {
-            link.classList.remove("active");
-          });
-    
-          // Add the 'active' class to the current link
-          const activeLink = document.querySelector(`.nav-link[href="#${activeSection}"]`);
-          if (activeLink) {
-            activeLink.classList.add("active");
-          }
-        }
-      }
-    
-      window.addEventListener("scroll", activateNavLink);
-    });
-    
-    const moreTextEl = document.getElementById('more-text');
-    const toggleBtnEl = document.getElementById('toggle-btn');
-    const hideBtnEl = document.getElementById('hide-btn');
-    const imgHide = document.getElementById('image-hide');
-    
-    toggleBtnEl.addEventListener('click', () => {
-        moreTextEl.classList.toggle('hidden');
-        toggleBtnEl.classList.toggle('hidden');
-        hideBtnEl.classList.toggle('hidden');
-        imgHide.classList.toggle('hidden');
-    });
-    
-    hideBtnEl.addEventListener('click', () => {
-        moreTextEl.classList.toggle('hidden');
-        toggleBtnEl.classList.toggle('hidden');
-        hideBtnEl.classList.toggle('hidden');
-        imgHide.classList.toggle('hidden');
-    });
-    
-    function scrollToSection(id) {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-    
-    // Event listener for category buttons
-    document.querySelectorAll('.category-btn').forEach((button) => {
-      button.addEventListener('click', () => {
-        const category = button.getAttribute('data-category');
-        filterProjects(category);
-      });
-    });
-    
-    // Event listener for category buttons
-    document.querySelectorAll('.category-btn').forEach((button) => {
-      button.addEventListener('click', () => {
-        const category = button.getAttribute('data-category');
-        filterProjects(category);
-      });
-    });
-    
-    // Event listener for category buttons
-    document.querySelectorAll('.category-btn').forEach((button) => {
-      button.addEventListener('click', () => {
-        const category = button.getAttribute('data-category');
-        filterProjects(category);
-      });
-    });
-    
-    document.querySelectorAll('.category-btn').forEach((button) => {
-      button.addEventListener('click', () => {
-        const category = button.getAttribute('data-category');
-        filterProjects(category);
-        highlightActiveButton(button);  // Add the active class to the clicked button
-      });
-    });
-    
-    function highlightActiveButton(activeButton) {
-      // Remove 'active' class from all category buttons
-      document.querySelectorAll('.category-btn').forEach((button) => {
-        button.classList.remove('active'); // Remove active class from all buttons
-      });
-    
-      // Add 'active' class to the clicked button
-      activeButton.classList.add('active');
-    }
-    
-    function filterProjects(category) {
-      const projects = document.querySelectorAll('.portfolio-item');
-      
-      // Show all projects if "All" is selected
-      if (category === "all") {
-        projects.forEach((project) => {
-          project.classList.remove('hidden'); // Show all projects
-          highlightActiveButton(document.querySelector('.category-btn[data-category="all"]'));
-        });
-      } else {
-        projects.forEach((project) => {
-          if (project.getAttribute('data-category') === category) {
-            project.classList.remove('hidden'); // Show matching category
-            highlightActiveButton(document.querySelector(`.category-btn[data-category="${category}"]`));
-          } else {
-            project.classList.add('hidden'); // Hide non-matching category
-          }
-        });
-      }
-    }
-  </script>
 
   <!-- Navbar -->
 <nav class="fixed start-0 px-4 py-4 flex justify-center items-center w-full bg-[#222831] lg:px-8 lg:py-6 sm:px-4 sm:py-2 border-b border-[#393E46] z-50">
@@ -250,7 +120,7 @@
             mollis aliquet luctus. Integer tempus turpis id tellus pharetra dictum. Ut scelerisque nulla quam. Sed ut dapibus mi, eget dictum quam. In non nisl in neque aliquam 
             faucibus. Pellentesque scelerisque tempor volutpat. Morbi efficitur leo sit amet ante dapibus, ut efficitur mi rutrum. Nulla commodo elementum est, quis ultrices leo 
             sodales quis.
-            <button id="toggle-btn" class="text-white font-bold font-[Poppins] focus:outline-none hover:cursor-pointer hover:underline">... Read More</button>
+            <button onclick="toggleElements()" id="toggle-btn" class="text-white font-bold font-[Poppins] focus:outline-none hover:cursor-pointer hover:underline">... Read More</button>
           </p>
           <p class="hidden text-[#EEEEEE] text-md font-[Poppins] font-thin text-justify px-6" id="more-text">
               Vestibulum auctor nec sapien eget condimentum. Aenean eu orci vel lectus imperdiet euismod et at justo. Mauris non vestibulum magna. Maecenas at lectus in nibh finibus 
@@ -258,7 +128,7 @@
               Aliquam velit dui, dapibus sed imperdiet nec, lobortis at elit. In non eros lorem. Morbi et nisi porttitor, fringilla massa et, tincidunt eros. Suspendisse at sapien 
               ultrices, tristique dolor eu, hendrerit eros. Proin vehicula dolor in ante lacinia, eu mollis erat dictum. Quisque odio quam, interdum ut dui in, tincidunt finibus nunc. 
               Nulla venenatis felis purus, sit amet venenatis elit interdum ac. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            <button id="hide-btn" class="hidden text-white font-bold focus:outline-none hover:cursor-pointer hover:underline">Hide</button>
+            <button onclick="hideElements()" id="hide-btn" class="hidden text-white font-bold focus:outline-none hover:cursor-pointer hover:underline">Hide</button>
           </p>
           <img src="assets/Vector 186.png" alt="music" class="w-auto ms-70 px-auto" id="image-hide">
         </div>
@@ -351,8 +221,139 @@
     </button>
   </div>
   </section>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".nav-link");
+    
+      function activateNavLink() {
+        let scrollY = window.scrollY + 100; // Adjust for navbar height
+        let activeSection = null;
+    
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute("id");
+    
+          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            activeSection = sectionId;
+          }
+        });
+    
+        if (activeSection) {
+          // Remove the 'active' class from all links
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+          });
+    
+          // Add the 'active' class to the current link
+          const activeLink = document.querySelector(`.nav-link[href="#${activeSection}"]`);
+          if (activeLink) {
+            activeLink.classList.add("active");
+          }
+        }
+      }
+    
+      window.addEventListener("scroll", activateNavLink);
+    });
+    
+    function toggleElements() {
+      const moreTextEl = document.getElementById('more-text');
+      const toggleBtnEl = document.getElementById('toggle-btn');
+      const hideBtnEl = document.getElementById('hide-btn');
+      const imgHide = document.getElementById('image-hide');
+      
+      moreTextEl.classList.toggle('hidden');
+      toggleBtnEl.classList.toggle('hidden');
+      hideBtnEl.classList.toggle('hidden');
+      imgHide.classList.toggle('hidden');
+  }
+  
+  function hideElements() {
+      const moreTextEl = document.getElementById('more-text');
+      const toggleBtnEl = document.getElementById('toggle-btn');
+      const hideBtnEl = document.getElementById('hide-btn');
+      const imgHide = document.getElementById('image-hide');
+      
+      moreTextEl.classList.toggle('hidden');
+      toggleBtnEl.classList.toggle('hidden');
+      hideBtnEl.classList.toggle('hidden');
+      imgHide.classList.toggle('hidden');
+  }  
+    
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    
+    // Event listener for category buttons
+    document.querySelectorAll('.category-btn').forEach((button) => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+        filterProjects(category);
+      });
+    });
+    
+    // Event listener for category buttons
+    document.querySelectorAll('.category-btn').forEach((button) => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+        filterProjects(category);
+      });
+    });
+    
+    // Event listener for category buttons
+    document.querySelectorAll('.category-btn').forEach((button) => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+        filterProjects(category);
+      });
+    });
+    
+    document.querySelectorAll('.category-btn').forEach((button) => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+        filterProjects(category);
+        highlightActiveButton(button);  // Add the active class to the clicked button
+      });
+    });
+    
+    function highlightActiveButton(activeButton) {
+      // Remove 'active' class from all category buttons
+      document.querySelectorAll('.category-btn').forEach((button) => {
+        button.classList.remove('active'); // Remove active class from all buttons
+      });
+    
+      // Add 'active' class to the clicked button
+      activeButton.classList.add('active');
+    }
+    
+    function filterProjects(category) {
+      const projects = document.querySelectorAll('.portfolio-item');
+      
+      // Show all projects if "All" is selected
+      if (category === "all") {
+        projects.forEach((project) => {
+          project.classList.remove('hidden'); // Show all projects
+          highlightActiveButton(document.querySelector('.category-btn[data-category="all"]'));
+        });
+      } else {
+        projects.forEach((project) => {
+          if (project.getAttribute('data-category') === category) {
+            project.classList.remove('hidden'); // Show matching category
+            highlightActiveButton(document.querySelector(`.category-btn[data-category="${category}"]`));
+          } else {
+            project.classList.add('hidden'); // Hide non-matching category
+          }
+        });
+      }
+    }
+  </script>
 </body>
+
+
 <!-- Footer -->
 <footer class="bg-[#222831] mt-10">
   <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
