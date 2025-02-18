@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+.justify-text {
+  text-align: justify;
+}
+
+/* Default navbar link styles */
+.nav-link {
+  color: #EEEEEE;
+  font-weight: normal;
+  transition: color 0.3s, font-weight 0.3s;
+}
+
+.nav-link.active {
+  color: #00ADB5; /* Active link color */
+  font-weight: bold; /* Active link bold */
+}
+
+/* Smooth transition for opacity */
+.portfolio-item {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+/* You can also customize the active button styles */
+.category-btn {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category-btn.active {
+  background-color: #00ADB5; /* Active button background color */
+  color: #fff; /* Active button text color */
+}

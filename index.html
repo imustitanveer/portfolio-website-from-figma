@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI by Musti</title>
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="icon" type="image/x-icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <script src="src/main.js"></script>
+</head>
+<body class="bg-[#222831]">
+
+  <!-- Navbar -->
+<nav class="fixed start-0 px-4 py-4 flex justify-center items-center w-full bg-[#222831] lg:px-8 lg:py-6 sm:px-4 sm:py-2 border-b border-[#393E46] z-50">
+  <a class="text-xl font-bold w-full text-[#EEEEEE] font-[Oswald] sm:text-sm" href="#">
+    <p class="font-[Oswald] text-2xl bg-solid opacity-100">aiByMusti</p>
+  </a>
+  <ul class="hidden flex justify-end space-x-6 lg:flex lg:items-end w-full sm:space-x-2 sm:mx-auto sm:items-center">
+    <li><a class="nav-link text-sm text-[#EEEEEE] hover:text-[#00ADB5] hover:font-bold px-4 font-[Poppins] font-light" href="#home">Home</a></li>
+    <li><a class="nav-link text-sm text-[#EEEEEE] hover:text-[#00ADB5] hover:font-bold px-4 font-[Poppins] font-light" href="#about">About Me</a></li>
+    <li><a class="nav-link text-sm text-[#EEEEEE] hover:text-[#00ADB5] hover:font-bold px-4 font-[Poppins] font-light" href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+  <!-- Hero -->
+   <section id="home">
+    <div class="flex space-x-50">
+      <!-- Hero Left Side -->
+      <div class="w-full align-items-center my-auto grid">
+        <div class="grid grid-cols-[1fr_2fr]">
+          <img src="assets/squiggle.png" alt="Squiggle" class="w-auto my-auto mx-auto">
+          <div class="w-full">
+            <h1 class="text-8xl uppercase font-bold text-[#EEEEEE] font-[Oswald] mb-6">Fullstack</h1>
+            <h1 class="text-8xl uppercase font-bold text-[#00ADB5] font-[Oswald]">AI Developer</h1>
+          </div>
+        </div>
+        <div class="flex justify-center gap-6 mt-6 ps-10 ms-30">
+          <button onclick="scrollToSection('contact')" class="bg-[#00ADB5] rounded-full hover:bg-[#00b9c2] text-white font-[Poppins] font-semibold py-2 px-4 rounded hover:cursor-pointer">Hire me</button>
+          <button class="rounded-full hover:brightness-110 text-black font-[Poppins] font-semibold hover:cursor-pointer">
+            <a href="https://www.buymeacoffee.com/aibymusti" target="_blank"><img src="assets/bmc-button.png" alt="coffee" class="h-10 rounded-full"></a></button>
+        </div>
+      </div>
+      <!-- Hero Right Side -->
+      <div class="w-full">
+        <img src="assets/Group-2374.png" alt="bg" class="w-auto mt-20">
+      </div>
+    </div>
+  
+    <!-- Button to Scroll -->
+    <div class="flex justify-center w-full mb-10">
+      <button onclick="scrollToSection('projects')" class="bg-[#393E46] rounded-lg hover:bg-[#00ADB5] text-white font-bold py-5 px-5 hover:rounded-full transition-all ease-in-out duration-700 hover:cursor-pointer">
+        <svg class="w-15 h-15 text-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+          <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z" fill="white"/>
+        </svg>
+      </button>
+    </div>
+   </section>
+
+
+  <!-- About Me -->
+   <section id="about">
+    
+  <!-- Music Icon -->
+  <div class="">
+    <img src="assets/Vector-141.png" alt="music" class="w-auto ms-10 px-auto">
+  </div>
+
+    <div class="flex w-full mt-20 top-0 font-[Poppins]">
+      <div class="w-full text-center my-auto font-[Poppins]">
+        <div class="flex justify-start px-5">
+          <h1 class="text-5xl text-[#EEEEEE] font-bold font-[Poppins]">About</h1>
+          <h1 class="text-5xl text-[#00ADB5] font-bold font-[Poppins] ms-3">me</h1>
+          <div>
+            <img src="assets/lightbulb.png" alt="Lightbulb" class="py-auto ms-70 h-15">
+          </div>
+        </div>
+        <div class="w-10 h-1 bg-[#00ADB5] mt-2 mx-5"></div>
+        <div class="w-3/4 text-justify content-center">
+          <p class="text-[#EEEEEE] text-md font-[Poppins] font-thin px-6 py-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac faucibus mi. Curabitur feugiat eros mattis, 
+            tempor tortor at, condimentum ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean at justo ac ex venenatis porta nec 
+            a sapien. Praesent auctor augue ut lacus consequat fringilla. Nam maximus eget metus sed egestas. Mauris nec nunc luctus, vehicula nulla in, dignissim tortor. Nullam 
+            mollis aliquet luctus. Integer tempus turpis id tellus pharetra dictum. Ut scelerisque nulla quam. Sed ut dapibus mi, eget dictum quam. In non nisl in neque aliquam 
+            faucibus. Pellentesque scelerisque tempor volutpat. Morbi efficitur leo sit amet ante dapibus, ut efficitur mi rutrum. Nulla commodo elementum est, quis ultrices leo 
+            sodales quis.
+            <button id="toggle-btn" class="text-white font-bold font-[Poppins] focus:outline-none hover:cursor-pointer hover:underline">... Read More</button>
+          </p>
+          <p class="hidden text-[#EEEEEE] text-md font-[Poppins] font-thin text-justify px-6" id="more-text">
+              Vestibulum auctor nec sapien eget condimentum. Aenean eu orci vel lectus imperdiet euismod et at justo. Mauris non vestibulum magna. Maecenas at lectus in nibh finibus 
+              porta. Nullam at turpis volutpat tortor fringilla fringilla at quis tortor. Maecenas quis odio posuere, congue eros rhoncus, suscipit leo. Mauris posuere commodo bibendum. 
+              Aliquam velit dui, dapibus sed imperdiet nec, lobortis at elit. In non eros lorem. Morbi et nisi porttitor, fringilla massa et, tincidunt eros. Suspendisse at sapien 
+              ultrices, tristique dolor eu, hendrerit eros. Proin vehicula dolor in ante lacinia, eu mollis erat dictum. Quisque odio quam, interdum ut dui in, tincidunt finibus nunc. 
+              Nulla venenatis felis purus, sit amet venenatis elit interdum ac. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            <button id="hide-btn" class="hidden text-white font-bold focus:outline-none hover:cursor-pointer hover:underline">Hide</button>
+          </p>
+          <img src="assets/Vector 186.png" alt="music" class="w-auto ms-70 px-auto" id="image-hide">
+        </div>
+      </div>
+      <div class="flex w-full h-150 flex-nowrap">
+        <img src="assets/group-62.png" alt="man2" class="w-auto">
+      </div>
+    </div>
+   </section>
+
+   <!-- Portfolio -->
+   <section id="projects">
+    <div style="background-image: url('assets/Projects Page.png');" class="w-full h-auto py-10">
+      <div class="font-[Poppins] flex gap-2 mt-50 ms-15">
+        <h1 class="text-5xl text-[#EEEEEE] font-bold font-[Poppins]">My recent</h1>
+        <h1 class="text-5xl text-[#00ADB5] font-bold font-[Poppins]">projects</h1>
+      </div>
+      
+      <!-- Category Buttons -->
+      <div class="flex gap-4 mt-6 justify-start ms-15">
+        <button onclick="filterProjects('all')" class="active category-btn px-4 py-2 bg-[#393E46] text-white rounded-xl hover:bg-[#00ADB5] hover:cursor-pointer active:bg-[#00ADB5]" data-category="all">All</button>
+        <button onclick="filterProjects('web-dev')" class="category-btn px-4 py-2 bg-[#393E46] text-white rounded-xl hover:bg-[#00ADB5] hover:cursor-pointer active:bg-[#00ADB5]" data-category="web-dev">Web Dev</button>
+        <button onclick="filterProjects('data-science')" class="category-btn px-4 py-2 bg-[#393E46] text-white rounded-xl hover:bg-[#00ADB5] hover:cursor-pointer active:bg-[#00ADB5]" data-category="data-science">Data Science</button>
+      </div>
+      
+      <!-- Portfolio Cards -->
+      <div class="grid grid-cols-4 gap-2 px-5 mt-10 mx-10" id="portfolio-grid">
+        <div class="portfolio-item px-5 py-5 backdrop-blur-sm bg-[#393E46]/50 rounded-3xl hover:bg-[#393E46]" data-category="web-dev">
+          <img src="assets/portfolio-1.jpg" alt="portfolio-1" class="w-80 h-50">
+        </div>
+        <div class="portfolio-item px-5 py-5 backdrop-blur-sm bg-[#393E46]/50 rounded-3xl hover:bg-[#393E46]" data-category="data-science">
+          <img src="assets/portfolio-2.jpg" alt="portfolio-2" class="w-80 h-50">
+        </div>
+        <div class="portfolio-item px-5 py-5 backdrop-blur-sm bg-[#393E46]/50 rounded-3xl hover:bg-[#393E46]" data-category="web-dev">
+          <img src="assets/portfolio-3.jpg" alt="portfolio-3" class="w-80 h-50">
+        </div>
+        <div class="portfolio-item px-5 py-5 backdrop-blur-sm bg-[#393E46]/50 rounded-3xl hover:bg-[#393E46]" data-category="data-science">
+          <img src="assets/portfolio-4.jpg" alt="portfolio-4" class="w-80 h-50">
+        </div>
+        <div class="portfolio-item px-5 py-5 backdrop-blur-sm bg-[#393E46]/50 rounded-3xl hover:bg-[#393E46]" data-category="web-dev">
+          <img src="assets/portfolio-5.jpg" alt="portfolio-5" class="w-80 h-50">
+        </div>
+      </div>
+    </div>
+  </section>  
+
+  <!-- Contact Me -->
+  <section id="contact">
+    <img src="assets/keyboard.png" alt="keyboard" class="w-auto mt-20 mb-10 mx-220">
+  <div class="grid grid-cols-2">
+    <!-- Left Side -->
+    <div class="w-full px-5">
+      <h1 class="text-[#EEEEEE] text-5xl font-bold font-[Poppins]">Got a project in</h1>
+      <h1 class="text-[#00ADB5] text-5xl font-bold font-[Poppins] mt-2">mind?</h1>
+      <img src="assets/Group-2376.png" alt="man3" class="w-auto mt-10">
+    </div>
+    <!-- Right Side -->
+    <div class="font-[Poppins]">
+      <form>
+        <div class="grid grid-cols-2 gap-2 me-30">
+          <div>
+            <label for="name" class="text-white text-md font-semibold mx-2">Your name</label><br>
+            <input type="text" id="name" name="fname" class="rounded-lg bg-[#2e333b] text-white px-5 py-2 w-full mt-2" placeholder="Name"><br>
+          </div>
+          <div>
+            <label for="email" class="text-white text-md font-semibold mx-2">Your email</label><br>
+            <input type="email" id="email" name="email" class="rounded-lg bg-[#2e333b] text-white px-5 py-2 w-full mt-2" placeholder="Email"><br>
+          </div>
+        </div>
+        <div class="mt-4 me-30 font-[Poppins]">
+          <label for="message" class="text-white text-md font-semibold mx-2">Your message</label><br>
+          <textarea id="message" name="message" 
+                    class="rounded-lg bg-[#2e333b] text-white px-5 py-2 w-full h-80 align-top leading-tight placeholder-gray-400 mt-2 resize-none font-[Poppins]"
+                    placeholder="Message"></textarea><br>
+        </div>        
+        <button class="bg-[#00ADB5] rounded-full hover:bg-[#00b9c2] text-white font-[Poppins] font-semibold py-2 px-4 rounded hover:cursor-pointer mt-5 text-sm">Send Message
+          <svg class="w-4 h-4 inline-block ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M22 2L2 8.66667L11.5833 12.4167M22 2L15.3333 22L11.5833 12.4167M22 2L11.5833 12.4167" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        </button>
+      </form>
+      <img src="assets/mail.png" alt="mail" class="w-auto mt-20 mx-120">
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <div class="flex justify-end">
+    <button class="bg-[#393E46] rounded-lg hover:bg-[#00ADB5] text-white font-bold me-10 py-5 px-5 hover:rounded-full transition-all ease-in-out duration-700 hover:cursor-pointer" id="back-to-top" onclick="scrollToSection('home')">
+      <svg class="w-5 h-5 text-white transform rotate-180" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+        <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z" fill="white"/>
+      </svg>      
+    </button>
+  </div>
+  </section>
+
+</body>
+<!-- Footer -->
+<footer class="bg-[#222831] mt-10">
+  <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+      <div class="sm:flex sm:items-center sm:justify-between">
+          <a href="https://aibymusti.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+              <img src="assets/logo.png" class="h-8" alt="AI by Musti Logo" />
+              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">aiByMusti</span>
+          </a>
+          <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+              <li>
+                  <a href="#" class="hover:underline me-4 md:me-6">About</a>
+              </li>
+              <li>
+                  <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+              </li>
+              <li>
+                  <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+              </li>
+              <li>
+                  <a href="#" class="hover:underline">Contact</a>
+              </li>
+          </ul>
+      </div>
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://aibymusti.com/" class="hover:underline">aiByMusti™</a>. All Rights Reserved.</span>
+  </div>
+</footer>
+</html>
