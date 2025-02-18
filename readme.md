@@ -4,6 +4,7 @@ This is a personal portfolio website I created based on a Figma community design
 
 ## Features
 
+- **Responsive Design:** The website is fully responsive, ensuring it works on desktops, tablets, and mobile devices.
 - **Buy Me A Coffee Button:** Instead of a 'Download CV' button, I added a 'Buy Me A Coffee' button for those who want to support me.
 - **Scroll-to-Top Button:** A scroll-to-top button has been added to make navigation easier on longer pages.
 - **Footer:** A footer was added with links to my social media profiles and other relevant resources.
@@ -41,7 +42,6 @@ You can view a live version of this project at [[live demo URL](https://main.d1b
 - Add more sections such as a blog or testimonials.
 - Integrate a backend for the contact form.
 - Improve performance by optimizing images and assets.
-- Add responsiveness.
 
 ## License
 
