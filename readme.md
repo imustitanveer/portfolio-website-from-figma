@@ -16,13 +16,13 @@ This is a personal portfolio website I created based on a Figma community design
 
 ## Live Demo
 
-You can view a live version of this project at [your live demo URL] (replace this with your actual URL).
+You can view a live version of this project at [[live demo URL](https://main.d1bihova58r1gq.amplifyapp.com/)].
 
 ## How To Use
 
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/yourusername/portfolio-website-from-figma.git
+   git clone https://github.com/imustitanveer/portfolio-website-from-figma.git
    ```
 2. Navigate to the project directory:
    ```bash
