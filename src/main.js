@@ -121,20 +121,3 @@ function filterProjects(category) {
     });
   }
 }
-
-// Function to toggle the navbar menu visibility and aria-expanded state
-function toggleNavbarMenu() {
-  const button = document.getElementById("navbar-toggle");
-  const menu = document.getElementById("navbar-default");
-
-  const isExpanded = button.getAttribute("aria-expanded") === "true";
-
-  // Toggle the menu visibility
-  menu.classList.toggle("hidden");
-
-  // Update the aria-expanded attribute
-  button.setAttribute("aria-expanded", !isExpanded);
-}
-
-// Add event listener to the hamburger button to trigger the toggle function on click
-document.getElementById("navbar-toggle").addEventListener("click", toggleNavbarMenu);

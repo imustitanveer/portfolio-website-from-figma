@@ -40,31 +40,52 @@
       background-color: #00ADB5; /* Active button background color */
       color: #fff; /* Active button text color */
     }
+
+      /* Hamburger transformation */
+      #navbar-toggle.open div > #line1 {
+      transform: translateY(0.5rem) rotate(45deg);
+    }
+      #navbar-toggle.open div > #line2 {
+      opacity: 0;
+    }
+      #navbar-toggle.open div > #line3 {
+      transform: translateY(-0.5rem) rotate(-45deg);
+    }
   </style>
 
   <!-- Navbar -->
-<nav class="fixed start-0 px-4 py-4 flex justify-between sm:items-end w-full bg-[#222831] sm:px-8 sm:py-6 border-b border-[#393E46]">
-  <div>
-    <a class="items-center space-x-3 rtl:space-x-reverse font-bold text-[#EEEEEE] font-[Oswald]" href="#">
-      <p class="font-[Oswald] sm:text-2xl bg-solid opacity-100">aiByMusti</p>
-    </a>
-  </div>
-  <div>
-    <button onclick="toggleNavbarMenu()" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-[#393E46] focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
-      <span class="sr-only">Open main menu</span>
-      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-      </svg>
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-4 py-4 bg-[#222831] border-b border-[#393E46]">
+    <!-- Brand -->
+    <a class="font-bold text-[#EEEEEE] font-[Oswald] text-xl" href="#">aiByMusti</a>
+
+    <!-- Hamburger Button (Mobile Only) -->
+    <button id="navbar-toggle" aria-expanded="false" class="md:hidden focus:outline-none z-50 hover:cursor-pointer">
+      <span class="sr-only">Toggle navigation</span>
+      <div class="w-6 h-6 relative">
+        <span id="line1" class="block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out"></span>
+        <span id="line2" class="block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out" style="top: 0.5rem;"></span>
+        <span id="line3" class="block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out" style="top: 1rem;"></span>
+      </div>
     </button>
-  </div>
-  <div class="hidden sm:block sm:w-auto">
-    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0" id="navbar-default">
-      <li><a class="nav-link py-2 px-3 text-white hover:text-[#00ADB5]" href="#home">Home</a></li>
-      <li><a class="nav-link py-2 px-3 text-white hover:text-[#00ADB5]" href="#about">About Me</a></li>
-      <li><a class="nav-link py-2 px-3 text-white hover:text-[#00ADB5]" href="#contact">Contact</a></li>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:block">
+      <ul class="flex space-x-8 text-white">
+        <li><a href="#home" class="hover:text-[#00ADB5]">Home</a></li>
+        <li><a href="#about" class="hover:text-[#00ADB5]">About Me</a></li>
+        <li><a href="#contact" class="hover:text-[#00ADB5]">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Sidebar (Initially off-screen to the right) -->
+  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-[#393E46] bg-opacity-95 flex flex-col items-center justify-center z-40 transform translate-x-full transition-transform duration-300">
+    <ul class="flex flex-col space-y-8 text-white text-2xl">
+      <li><a href="#home" class="hover:text-[#00ADB5]" onclick="toggleMenu()">Home</a></li>
+      <li><a href="#about" class="hover:text-[#00ADB5]" onclick="toggleMenu()">About Me</a></li>
+      <li><a href="#contact" class="hover:text-[#00ADB5]" onclick="toggleMenu()">Contact</a></li>
     </ul>
   </div>
-</nav>
 
   <!-- Hero -->
    <section id="home">
@@ -357,22 +378,25 @@
         }
       }
 
-  // Function to toggle the navbar menu visibility and aria-expanded state
-  function toggleNavbarMenu() {
-    const button = document.getElementById("navbar-toggle");
-    const menu = document.getElementById("navbar-default");
-
-    const isExpanded = button.getAttribute("aria-expanded") === "true";
-
-    // Toggle the menu visibility
-    menu.classList.toggle("hidden");
-
-    // Update the aria-expanded attribute
-    button.setAttribute("aria-expanded", !isExpanded);
-  }
-
-  // Add event listener to the hamburger button to trigger the toggle function on click
-  document.getElementById("navbar-toggle").addEventListener("click", toggleNavbarMenu);
+      const navbarToggle = document.getElementById('navbar-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+    
+      function toggleMenu() {
+        const isExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          navbarToggle.setAttribute('aria-expanded', 'false');
+          mobileMenu.classList.add('translate-x-full');
+          mobileMenu.classList.remove('translate-x-0');
+          navbarToggle.classList.remove('open');
+        } else {
+          navbarToggle.setAttribute('aria-expanded', 'true');
+          mobileMenu.classList.add('translate-x-0');
+          mobileMenu.classList.remove('translate-x-full');
+          navbarToggle.classList.add('open');
+        }
+      }
+    
+      navbarToggle.addEventListener('click', toggleMenu);
   </script> 
 </body>
 
